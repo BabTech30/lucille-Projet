@@ -1,2 +1,4 @@
+# Bloquer tous les moteurs de recherche (Google, Bing, etc.)
+# Protection de la vie privée pour le site témoignage
 User-agent: *
 Disallow: /
