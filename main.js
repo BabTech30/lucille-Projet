@@ -12,16 +12,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    // Cibler tous les éléments importants
+    // Cibler tous les éléments importants (timeline, cartes, roadmap)
     const elements = document.querySelectorAll('.timeline-item, .card, .roadmap-item');
+    
     elements.forEach(el => {
+        // On prépare l'élément (invisible au départ)
         el.style.opacity = '0';
         el.style.transform = 'translateY(20px)';
         el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
         observer.observe(el);
     });
     
-    // Ajouter la classe visible via CSS dynamique
+    // Ajouter la classe visible via CSS dynamique pour forcer l'affichage
     const style = document.createElement('style');
     style.innerHTML = `
         .visible {
